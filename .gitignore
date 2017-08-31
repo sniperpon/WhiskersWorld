@@ -1,0 +1,13 @@
+*~
+*.pyc
+*.log
+*.jpg
+*.iml
+build*
+dist*
+metastore_db*
+.cache
+.idea*
+.coverage
+coverage.xml
+junit-output.xml
