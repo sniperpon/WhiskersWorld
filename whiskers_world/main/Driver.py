@@ -1,5 +1,8 @@
 import argparse
 from whiskers_world.main.Logger import Logger
+from whiskers_world.graphics.Renderer import Renderer
+from whiskers_world.input.InputHandler import InputHandler
+from whiskers_world.main.Game import Game
 
 
 class Driver:
@@ -40,7 +43,11 @@ class Driver:
         if self._args.mode == "play":
             self._logger.write_to_log("Executing in play mode")
 
-            # Execute the game in demo mode
+            # Execute the game in play mode
+            game = Game(
+                Renderer(self._logger), InputHandler(self._logger)
+            )
+            game.run()
 
         # Close the logger now that we're done
         self._logger.close_log()
